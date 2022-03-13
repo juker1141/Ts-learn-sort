@@ -1,27 +1,22 @@
 "use strict";
-class Sorter {
-    // collection: number[];
-    // constructor(collection: number[]) {
-    //   this.collection = collection;
-    // }
-    // 完全等同於上面兩行
-    constructor(collection) {
-        this.collection = collection;
-    }
-    sort() {
-        const { length } = this.collection;
-        for (let i = 0; i < length; i++) {
-            for (let j = 0; j < length - i - 1; j++) {
-                if (this.collection[j] > this.collection[j + 1]) {
-                    const leftHand = this.collection[j];
-                    this.collection[j] = this.collection[j + 1];
-                    this.collection[j + 1] = leftHand;
-                }
-            }
-        }
-    }
-}
-;
-const sorter = new Sorter([10, 3, 0, -5]);
-sorter.sort();
-console.log(sorter.collection);
+Object.defineProperty(exports, "__esModule", { value: true });
+const NumbersCollection_1 = require("./NumbersCollection");
+const CharactersCollection_1 = require("./CharactersCollection");
+const LinkedList_1 = require("./LinkedList");
+const numbersCollection = new NumbersCollection_1.NumbersCollection([10, 3, 0, -5]);
+// const sorter = new Sorter(numbersCollection);
+numbersCollection.sort();
+console.log(numbersCollection.data);
+const charactersCollection = new CharactersCollection_1.CharactersCollection("asdafsjihlghjkrtko'n.cv");
+// const sorter = new Sorter(charactersCollection);
+charactersCollection.sort();
+console.log(charactersCollection.data);
+const linkedList = new LinkedList_1.LinkedList();
+linkedList.add(500);
+linkedList.add(10);
+linkedList.add(-5);
+linkedList.add(-45);
+linkedList.add(15);
+// const sorter = new Sorter(linkedList);
+linkedList.sort();
+linkedList.print();
